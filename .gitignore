@@ -1,0 +1,5 @@
+# Dependencies
+node_modules/
+
+# n8n credentials (copy from .mcp.json.example and fill in your values — do not commit real API keys)
+.mcp.json
