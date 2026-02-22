@@ -55,17 +55,7 @@ Then open `.mcp.json` and replace the placeholder values:
 
 > ⚠️ **Security note:** `.mcp.json` is in `.gitignore` — your real credentials will never be committed to git. Do not remove it from `.gitignore`.
 
-### 3. Install n8n-skills (recommended)
-
-Open Claude Code in the project directory and run:
-
-```
-/plugin install czlonkowski/n8n-skills
-```
-
-This installs 7 expert skills that teach Claude how to build production-ready n8n workflows correctly (expression syntax, validation, node configuration, etc.).
-
-### 4. Open Claude Code and start building
+### 3. Open Claude Code and start building
 
 ```bash
 claude
@@ -111,7 +101,7 @@ You (Claude Code prompt)
 - **`.mcp.json`** — MCP server configuration; tells Claude Code to run the `n8n-mcp` server with your n8n credentials
 - **`CLAUDE.md`** — Project instructions for Claude; guides it to check credentials, install skills, and follow best practices when building workflows
 - **[n8n-mcp](https://github.com/czlonkowski/n8n-mcp)** — MCP server providing access to 1,000+ n8n node docs, templates, and workflow management tools
-- **[n8n-skills](https://github.com/czlonkowski/n8n-skills)** — 7 Claude Code skills for expert-level n8n workflow building
+- **[n8n-skills](https://github.com/czlonkowski/n8n-skills)** — 7 expert skills bundled in `.claude/skills/` for production-ready n8n workflow building (expression syntax, validation, node configuration, etc.)
 
 ---
 
@@ -130,6 +120,15 @@ You (Claude Code prompt)
 
 ```
 n8n-builder-playground/
+├── .claude/
+│   └── skills/            ← Bundled n8n-skills (7 expert skills, auto-loaded by Claude Code)
+│       ├── n8n-code-javascript/
+│       ├── n8n-code-python/
+│       ├── n8n-expression-syntax/
+│       ├── n8n-mcp-tools-expert/
+│       ├── n8n-node-configuration/
+│       ├── n8n-validation-expert/
+│       └── n8n-workflow-patterns/
 ├── .mcp.json.example  ← MCP server config template (copy to .mcp.json and fill in your credentials)
 ├── .mcp.json          ← Your local credentials (gitignored — never committed)
 ├── CLAUDE.md          ← AI agent instructions (auto-loaded by Claude Code)

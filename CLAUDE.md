@@ -44,18 +44,6 @@ Do not attempt to create or deploy any workflow until the credentials are proper
 
 ---
 
-## 🛠️ n8n-Skills Installation Check
-
-The **n8n-skills** plugin provides expert guidance for building flawless n8n workflows. If the user has not yet installed it, recommend they run this command in Claude Code:
-
-```
-/plugin install czlonkowski/n8n-skills
-```
-
-You can proceed without it, but the skills significantly improve workflow quality.
-
----
-
 ## 🔧 Building Workflows
 
 Once credentials are configured, follow this process to build any n8n workflow the user requests:
