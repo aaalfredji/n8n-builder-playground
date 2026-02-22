@@ -19,15 +19,9 @@ git clone https://github.com/aaalfredji/n8n-builder-playground.git
 cd n8n-builder-playground
 ```
 
-### 2. Configure your n8n credentials
+### 2. Fill in your n8n credentials
 
-Copy the example MCP configuration and fill in your n8n server details:
-
-```bash
-cp .mcp.json.example .mcp.json
-```
-
-Then open `.mcp.json` and replace the placeholder values:
+Open `.mcp.json` (already present in the repo) and replace the placeholder values with your n8n server details:
 
 ```json
 {
@@ -53,7 +47,10 @@ Then open `.mcp.json` and replace the placeholder values:
 3. Click **Create an API Key**
 4. Copy the key and paste it into `.mcp.json`
 
-> ⚠️ **Security note:** `.mcp.json` is in `.gitignore` — your real credentials will never be committed to git. Do not remove it from `.gitignore`.
+> ⚠️ **Security note:** Do not commit `.mcp.json` after filling in your real API key. To stop git from tracking your local changes, run:
+> ```bash
+> git update-index --assume-unchanged .mcp.json
+> ```
 
 ### 3. Open Claude Code and start building
 
@@ -129,8 +126,7 @@ n8n-builder-playground/
 │       ├── n8n-node-configuration/
 │       ├── n8n-validation-expert/
 │       └── n8n-workflow-patterns/
-├── .mcp.json.example  ← MCP server config template (copy to .mcp.json and fill in your credentials)
-├── .mcp.json          ← Your local credentials (gitignored — never committed)
+├── .mcp.json          ← MCP server config with placeholders — fill in your n8n URL and API key
 ├── CLAUDE.md          ← AI agent instructions (auto-loaded by Claude Code)
 └── README.md          ← This file
 ```

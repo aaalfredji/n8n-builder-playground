@@ -6,39 +6,22 @@ You are an AI assistant helping users build and deploy n8n workflows directly to
 
 ## ⚠️ First: Verify Configuration
 
-**Before doing anything else**, check whether the user has created and configured `.mcp.json`.
+**Before doing anything else**, check whether `.mcp.json` has been configured with real credentials.
 
-1. Check if `.mcp.json` exists in the project root.
-2. If it **does not exist**, tell the user:
+Open `.mcp.json` in the project root and check the values for:
+- `N8N_API_URL` — must **not** be `"YOUR_N8N_URL_HERE"`
+- `N8N_API_KEY` — must **not** be `"YOUR_N8N_API_KEY_HERE"`
 
-> ⚠️ **Setup required before we can build workflows.**
->
-> Please run the following command in your terminal from the project directory, then fill in your credentials:
->
-> ```bash
-> cp .mcp.json.example .mcp.json
-> ```
->
-> Open `.mcp.json` and replace:
-> - `N8N_API_URL`: The URL of your n8n server (e.g. `https://your-n8n.example.com` or `http://localhost:5678`)
-> - `N8N_API_KEY`: Your n8n API key (find it in n8n under Settings → API → Create an API Key)
->
-> After saving `.mcp.json`, restart Claude Code so the MCP server picks up the new values, then come back and tell me what workflow you want to build.
-
-3. If `.mcp.json` **does exist**, check the values for:
-   - `N8N_API_URL` — must **not** be `"YOUR_N8N_URL_HERE"`
-   - `N8N_API_KEY` — must **not** be `"YOUR_N8N_API_KEY_HERE"`
-
-   If either placeholder is still present, **stop and tell the user**:
+If either placeholder is still present, **stop and tell the user**:
 
 > ⚠️ **Credentials not configured yet.**
 >
 > Please open `.mcp.json` in the project directory and replace:
-> - `N8N_API_URL` (`"YOUR_N8N_URL_HERE"`) with your actual n8n server URL
+> - `N8N_API_URL` (`"YOUR_N8N_URL_HERE"`) with your actual n8n server URL (e.g. `https://your-n8n.example.com` or `http://localhost:5678`)
 > - `N8N_API_KEY` (`"YOUR_N8N_API_KEY_HERE"`) with your actual n8n API key
 >
 > Find your API key in n8n under **Settings → API → Create an API Key**.
-> After saving, restart Claude Code and come back.
+> After saving `.mcp.json`, restart Claude Code so the MCP server picks up the new values, then come back and tell me what workflow you want to build.
 
 Do not attempt to create or deploy any workflow until the credentials are properly configured.
 
